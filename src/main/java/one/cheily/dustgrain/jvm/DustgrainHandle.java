@@ -13,11 +13,31 @@ import java.util.List;
 import java.util.Map;
 
 public class DustgrainHandle {
+    private static boolean isInitialized = false;
+
     public DustgrainHandle() {
+        if (isInitialized)
+            return;
+
         Application.INSTANCE.initialize(AppProfile.LIB);
+        isInitialized = true;
     }
 
     public DustgrainHandle(AppProfile profile, AppConfig config) {
+        if (isInitialized)
+            return;
+
+        Application.INSTANCE.initialize(profile, config);
+        isInitialized = true;
+    }
+
+    public void reinitialize() {
+        isInitialized = true;
+        Application.INSTANCE.initialize(AppProfile.LIB);
+    }
+
+    public void reinitialize(AppProfile profile, AppConfig config) {
+        isInitialized = true;
         Application.INSTANCE.initialize(profile, config);
     }
 
