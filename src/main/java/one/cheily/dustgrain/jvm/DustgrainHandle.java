@@ -116,6 +116,10 @@ public class DustgrainHandle {
     public List<DataGrain> getAllCharacterDataByCustomQuery(String game, String where) {
         return Application.INSTANCE.getGameModules().getAllCharacterDataByCustomQueryBlocking(game, where);
     }
+
+    public List<String> listCharactersForMoveTable(String game) {
+        return Application.INSTANCE.getGameModules().listCharactersForMoveTableBlocking(game);
+    }
     // --- common fetch api ---
 
     public void clearCache() {

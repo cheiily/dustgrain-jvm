@@ -11,7 +11,8 @@ kotlin {
 }
 
 group = "one.cheily"
-version = "3.1.2"
+var coreVersion = "3.2.0"
+version = coreVersion + "-0.1"
 
 repositories {
     mavenCentral()
@@ -25,7 +26,7 @@ dependencies {
     testImplementation(kotlin("test"))
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
-    implementation("one.cheily:dustgrain-core:${version}")
+    implementation("one.cheily:dustgrain-core:${coreVersion}")
     implementation("org.slf4j:slf4j-api:2.0.18")
 }
 
