@@ -10,6 +10,12 @@ public class DataUtil {
         return Optional.ofNullable(spike.getGrain(name));
     }
 
+    public static Optional<DataGrain> optLike(DataSpike spike, String nameLike) {
+        return spike.getGrains().stream()
+                .filter(grain -> grain.getHeader().getName().contains(nameLike))
+                .findFirst();
+    }
+
     public static String onlyEntryOf(DataGrain grain) {
         if (grain.getContents().isEmpty()) return null;
         else return grain.getContents().getFirst();

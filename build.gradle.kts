@@ -12,7 +12,7 @@ kotlin {
 
 group = "one.cheily"
 var coreVersion = "3.2.0"
-version = coreVersion + "-0.1"
+version = coreVersion + "-0.2"
 
 repositories {
     mavenCentral()
